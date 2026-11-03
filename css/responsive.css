@@ -1,0 +1,64 @@
+/* =========================================================
+   Codevora Labs - Responsive Styles
+   ========================================================= */
+
+/* ---------- Tablet & small laptop ---------- */
+@media (max-width: 992px) {
+  .section { padding: 5rem 0; }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: repeat(2, 1fr); }
+  .about-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+
+/* ---------- Mobile navigation ---------- */
+@media (max-width: 860px) {
+  .menu-toggle { display: block; }
+  .nav-cta { display: none; }
+
+  .nav-links {
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 1rem 1.25rem 1.5rem;
+    background: rgba(5, 11, 27, 0.97);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    transform: translateY(-120%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.35s ease, opacity 0.35s ease, visibility 0.35s;
+  }
+  .nav-links.open { transform: translateY(0); opacity: 1; visibility: visible; }
+  .nav-links li { border-bottom: 1px solid var(--border); }
+  .nav-link { display: block; padding: 0.95rem 0; font-size: 1rem; }
+  .nav-link::after { display: none; }
+  .nav-cta-mobile { display: block; border-bottom: 0 !important; padding-top: 1.1rem; }
+  .nav-cta-mobile .btn { width: 100%; }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 640px) {
+  :root { --header-h: 68px; }
+  .section { padding: 4rem 0; }
+  .grid-2, .grid-3, .steps { grid-template-columns: 1fr; }
+  .card, .card-glow { padding: 1.7rem; }
+  .hero { min-height: auto; padding-bottom: 4rem; }
+  .hero-logo { width: 68px; height: 68px; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .section-head { margin-bottom: 2.5rem; }
+  .cta-box { padding: 3rem 1.25rem; }
+  .contact-list span { text-align: center; min-width: 0; width: 100%; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* ---------- Large screens ---------- */
+@media (min-width: 1440px) {
+  .container { width: min(1240px, 100% - 4rem); }
+}
